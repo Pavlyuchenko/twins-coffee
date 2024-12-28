@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Twins Coffee | Mobile Coffee Van for Events</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            :root {
+                --primary-color: #2c1810;
+                --accent-color: #d4a574;
+                --light-color: #fff8f0;
+            }
+
+            body {
+                line-height: 1.6;
+                color: #333;
+            }
+
+            header {
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 1.2rem;
+                position: fixed;
+                width: 100%;
+                z-index: 100;
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            nav {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: var(--primary-color);
+                letter-spacing: -1px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 3rem;
+            }
+
+            .nav-links a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.1rem;
+                position: relative;
+                padding: 0.5rem 0;
+            }
+
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent-color);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .hero {
+                height: 100vh;
+                background: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                    ),
+                    url("https://lh5.googleusercontent.com/proxy/aMkSxZvwAha6z06P_EzxaRvmmfbVSTVKfQ3nJPjTHhiaHadA8bLPKzlfYhomdRFKkynndlN4L-xaDFvCzi2IxCqJACegRJidmdwNcLmT3KkVJtiy05RrmWUA7r4")
+                        center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: white;
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                max-width: 800px;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+                margin-bottom: 1rem;
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+
+            .hero p {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                opacity: 0.9;
+            }
+
+            .cta-button {
+                display: inline-block;
+                padding: 1rem 2.5rem;
+                background-color: var(--accent-color);
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                transition: all 0.3s;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+            }
+
+            .cta-button:hover {
+                background-color: var(--primary-color);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .services {
+                padding: 5rem 1rem;
+                background-color: var(--light-color);
+            }
+
+            .services-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .services h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: var(--primary-color);
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+
+            .service-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .service-card {
+                background: white;
+                padding: 2.5rem;
+                border-radius: 20px;
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .service-card h3 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .contact {
+                padding: 5rem 1rem;
+                background-color: var(--primary-color);
+                color: white;
+            }
+
+            .contact-container {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .contact h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+
+            .contact-info {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            footer {
+                background-color: #1a1a1a;
+                color: white;
+                text-align: center;
+                padding: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.8rem;
+                }
+
+                .nav-links {
+                    display: none;
+                }
+
+                .logo {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">twins coffee</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Premium Mobile Coffee Experience</h1>
+                <p>
+                    Bringing artisanal coffee to your special events with our
+                    charming Piaggio van
+                </p>
+                <a href="#contact" class="cta-button">Book Now</a>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="services-container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Weddings</h3>
+                        <p>
+                            Make your special day even more memorable with our
+                            mobile coffee bar. We serve premium coffee drinks to
+                            keep your guests energized and happy throughout the
+                            celebration.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Corporate Events</h3>
+                        <p>
+                            Impress your clients and colleagues with our
+                            professional coffee service. Perfect for
+                            conferences, meetings, and team-building events.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Private Parties</h3>
+                        <p>
+                            Add a unique touch to your gathering with our
+                            vintage Piaggio van serving delicious coffee drinks.
+                            Available for birthdays, anniversaries, and special
+                            celebrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <h2>Get in Touch</h2>
+                <p>Ready to bring amazing coffee to your next event?</p>
+                <div class="contact-info">
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@twinscoffee.com</p>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Twins Coffee. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
