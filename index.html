@@ -13,18 +13,38 @@
             rel="stylesheet"
         />
 
+        <link rel="shortcut icon" href="/fotky/logo.png" type="image/x-icon" />
+
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <div id="top"></div>
         <header>
             <nav>
-                <div class="logo">coffee twins</div>
                 <div class="nav-links">
                     <a href="#top">Domů</a>
                     <a href="#services">Naše služby</a>
+                    <a href="#gallery">Galerie</a>
+                </div>
+                <a href="#top" class="logo">
+                    <img
+                        src="/fotky/logo.png"
+                        alt=""
+                        width="100px"
+                        height="87px"
+                    />
+                </a>
+                <div class="nav-links">
                     <a href="#about">O nás</a>
-                    <a href="#contact">Kontakt</a>
+                    <a href="#contact" id="objednat-button">Objednat</a>
+                </div>
+
+                <button id="menu-toggle">☰</button>
+                <div id="mobile-nav">
+                    <a href="#top">Domů</a>
+                    <a href="#services">Naše služby</a>
+                    <a href="#gallery">Galerie</a>
+                    <a href="#about">O nás</a>
                     <a href="#contact" id="objednat-button">Objednat</a>
                 </div>
             </nav>
@@ -35,7 +55,8 @@
             <div class="hero-content">
                 <h1>Twins Coffee</h1>
                 <p>
-                    Pojízdná kavárna - Svatební hostiny, kulturní akce, oslavy
+                    Pojízdná kavárna - Svatební hostiny, kulturní akce, oslavy -
+                    doplnit/upravit
                 </p>
             </div>
         </section>
@@ -50,15 +71,24 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <h3>Svatby</h3>
-                        <p>c</p>
+                        <p>
+                            doplnit text, možná fotky? Případně by šlo udělat to
+                            jako odkaz s více informacemi
+                        </p>
                     </div>
                     <div class="service-card">
                         <h3>Sportovní akce</h3>
-                        <p>b</p>
+                        <p>
+                            doplnit text, možná fotky? Případně by šlo udělat to
+                            jako odkaz s více informacemi
+                        </p>
                     </div>
                     <div class="service-card">
                         <h3>Soukromé akce</h3>
-                        <p>a</p>
+                        <p>
+                            doplnit text, možná fotky? Případně by šlo udělat to
+                            jako odkaz s více informacemi
+                        </p>
                     </div>
                 </div>
             </div>
@@ -70,7 +100,7 @@
                 <p>
                     Máme kávovar La Nuova Era, kávu od ostravské pražírny Laura
                     Coffee, jde o středně pražené zrna Arabica pocházející z
-                    Brazílie.
+                    Brazílie. -- doplnit! (možná přidat fotky?)
                 </p>
             </div>
         </section>
@@ -119,11 +149,18 @@
         <section class="contact" id="contact">
             <div class="contact-container">
                 <h2>Spojte se s námi!</h2>
-                <p>Skvělá káva pro vaši akci? Postaráme se o ni!</p>
+                <p>
+                    Skvělá káva pro vaši akci? Postaráme se o ni!
+                    DOPLNIT/UPRAVIT!
+                </p>
                 <div class="contact-info">
                     <div>
                         <h3>Email</h3>
                         <p>twinscoffee@email.cz</p>
+                        <h3>Instagram</h3>
+                        <a href="https://www.instagram.com/twinscoffee.cz/"
+                            >twinscoffee.cz</a
+                        >
                     </div>
                     <div>
                         <h3>Telefon (A)</h3>
@@ -160,6 +197,13 @@
                 .querySelector(".lightbox")
                 .addEventListener("click", function () {
                     this.style.display = "none";
+                });
+
+            document
+                .getElementById("menu-toggle")
+                .addEventListener("click", function () {
+                    var mobileNav = document.getElementById("mobile-nav");
+                    mobileNav.classList.toggle("active");
                 });
         </script>
     </body>

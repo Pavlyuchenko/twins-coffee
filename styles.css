@@ -21,7 +21,7 @@ body {
 header {
     background-color: #fff;
     backdrop-filter: blur(10px);
-    padding: 1.2rem;
+    padding: 0.25rem 3rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -30,7 +30,6 @@ header {
 }
 
 nav {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -54,7 +53,7 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     position: relative;
     padding: 0.5rem 0;
 }
@@ -98,56 +97,64 @@ nav #objednat-button:hover::after {
 .hero {
     text-align: center;
     color: white;
-    padding: 0 1rem;
 
-    max-width: 1200px;
-    margin: 80px auto;
+    margin-top: 100px;
 
     border-radius: var(--border-radius);
 
     position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+    );
+    z-index: 1;
 }
 
 .hero img {
-    width: 100%;
-    max-width: 1200px;
-    height: 70vh;
+    min-width: 100%;
+    max-height: calc(100vh - 100px);
     object-fit: cover;
     border-radius: var(--border-radius);
-    z-index: -1;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: fit-content;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 800;
-    color: var(--primary-color);
+    color: var(--accent-color);
+    text-align: left;
+    width: fit-content;
 }
 
 .hero p {
-    font-size: 1.65rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
-    color: black;
-    font-weight: 400;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--accent-color);
     color: white;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-weight: bold;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-.cta-button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    text-align: left;
+    width: fit-content;
 }
 
 .services {
@@ -162,10 +169,13 @@ nav #objednat-button:hover::after {
 }
 
 .services h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
     font-weight: 800;
-    letter-spacing: -1px;
+}
+
+.services p {
+    font-size: 1.3rem;
 }
 
 .service-grid {
@@ -190,7 +200,7 @@ nav #objednat-button:hover::after {
 .service-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
@@ -206,11 +216,13 @@ nav #objednat-button:hover::after {
 }
 
 .about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 3.5rem;
     color: var(--primary-color);
     font-weight: 800;
-    letter-spacing: -1px;
+}
+
+.about p {
+    font-size: 1.3rem;
 }
 
 .gallery {
@@ -220,7 +232,7 @@ nav #objednat-button:hover::after {
 }
 
 .gallery h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: var(--primary-color);
     margin-bottom: 2rem;
 }
@@ -304,10 +316,15 @@ nav #objednat-button:hover::after {
 }
 
 .contact h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
-    letter-spacing: -1px;
+}
+
+.contact p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 .contact-info {
@@ -315,6 +332,21 @@ nav #objednat-button:hover::after {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+
+    font-weight: 500;
+}
+
+.contact-info h3 {
+    font-weight: 400;
+}
+
+.contact-info a,
+.contact-info p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.contact-info a {
+    color: white;
 }
 
 footer {
@@ -331,16 +363,218 @@ footer a {
     transition: all 0.3s;
 }
 
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+
+    color: var(--accent-color);
+    touch-action: manipulation; /* Prevent double-tap zoom */
+}
+
+#mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+#mobile-nav a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.8rem;
+    #menu-toggle {
+        display: block;
     }
 
     .nav-links {
         display: none;
     }
 
-    .logo {
+    #mobile-nav.active {
+        display: flex;
+    }
+}
+
+/* General adjustments for smaller screens */
+@media (max-width: 1000px) {
+    /* Header and Navigation */
+    header {
+        padding: 0.25rem 1rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 70px;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 3rem;
+        left: 20px;
+    }
+
+    .hero p {
         font-size: 1.5rem;
+        left: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    .hero-content h1 {
+        color: #fff;
+    }
+    .hero-content p {
+        display: none;
+    }
+    .hero::before {
+        /* gradient from top to bottom*/
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0)
+        ) !important;
+    }
+
+    /* Services Section */
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    /* Gallery Section */
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* Contact Section */
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-info a,
+    .contact-info p {
+        font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1rem;
+    }
+}
+
+/* Adjustments for very small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    .nav-links {
+        display: none; /* Consider using a hamburger menu here */
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero::before {
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0)
+        );
+    }
+
+    .hero-content {
+        max-width: 75%;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero img {
+        max-height: 300px;
+    }
+
+    /* Services Section */
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .services p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    /* Gallery Section */
+    /* Gallery Section */
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    .gallery h2 {
+        font-size: 2rem;
+    }
+
+    /* Contact Section */
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
     }
 }
