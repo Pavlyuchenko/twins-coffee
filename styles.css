@@ -568,6 +568,19 @@ footer a {
         grid-row: span 1;
     }
 
+    /* FAQ Seciton */
+    .faq-item {
+        margin-bottom: 1rem;
+    }
+
+    .faq-question {
+        font-size: 1.2rem;
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+    }
+
     /* Contact Section */
     .contact-info {
         grid-template-columns: 1fr;
@@ -599,13 +612,17 @@ footer a {
         font-size: 1.2rem;
     }
 
+    .hero {
+        margin: 2rem 1rem;
+        margin-top: 100px;
+    }
+
     .hero::before {
         background: linear-gradient(
             to right,
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.25),
             rgba(0, 0, 0, 0)
         );
     }
@@ -628,8 +645,16 @@ footer a {
     }
 
     /* Services Section */
+    .services {
+        padding: 2rem 1rem;
+    }
+
     .services h2 {
         font-size: 2rem;
+    }
+
+    .services h3 {
+        font-size: 1.5rem;
     }
 
     .services p {
@@ -649,9 +674,23 @@ footer a {
     /* Gallery Section */
     .gallery-container {
         grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
     }
     .gallery h2 {
         font-size: 2rem;
+    }
+
+    /* FAQ Section */
+    .faq h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
     }
 
     /* Contact Section */
