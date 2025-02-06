@@ -30,18 +30,20 @@ header {
 }
 
 nav {
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    height: 100px; /* Adjust height to match logo */
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-family: "Dancing Script";
-    font-weight: 800;
-    color: var(--primary-color);
-    letter-spacing: -1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100px; /* Ensures it matches the nav height */
 }
 
 .nav-links {
@@ -185,6 +187,14 @@ nav #objednat-button:hover::after {
     margin-top: 2rem;
 }
 
+/* image of emoji */
+.services .emoji {
+    width: 75px;
+    height: 75px;
+
+    margin-bottom: 1rem;
+}
+
 .service-card {
     background: white;
     padding: 2.5rem;
@@ -200,8 +210,16 @@ nav #objednat-button:hover::after {
 .service-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
+}
+
+.service-card a {
+    color: black;
+    font-weight: 500;
+    transition: all 0.3s;
+
+    font-size: 1.3rem;
 }
 
 .about {
@@ -303,6 +321,62 @@ nav #objednat-button:hover::after {
     cursor: pointer;
 }
 
+.faq {
+    padding: 4rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: "▼";
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-align: left;
+    color: var(--primary-color);
+    border-radius: 8px;
+}
+
+.faq-item.open .faq-question::after {
+    transform: rotate(180deg);
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
 .contact {
     padding: 5rem 1rem;
     background-color: var(--primary-color);
@@ -370,6 +444,9 @@ footer a {
     font-size: 3rem;
     cursor: pointer;
 
+    position: absolute;
+    right: 0;
+
     color: var(--accent-color);
     touch-action: manipulation; /* Prevent double-tap zoom */
 }
@@ -422,6 +499,14 @@ footer a {
 
     .nav-links a {
         font-size: 1rem;
+    }
+
+    nav {
+        height: 80px;
+    }
+
+    .logo {
+        height: 80px;
     }
 
     .logo img {
