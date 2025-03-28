@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Coffee Twins | Pojízdná kavárna z Opavy</title>
+        <title>Twins Coffee | Pojízdná kavárna z Opavy</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +18,78 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+        <div class="popup-overlay" id="svatbyPopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/svatba.png" alt="Emoji kytice na svatbu" width="40px" />
+                        <h3>Svatby</h3>
+                    </div>
+                    Chystáte se se svým milovaným partnerem na společnou cestu životem? Pojízdná kavárna může být skvělou zastávkou ke kousku svatebního dortu.<br>
+                </p>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="festivalyPopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/festival.png" alt="Emoji stanu na festival" width="40px" />
+                        <h3>Festivaly</h3>
+                    </div>
+                    Organizujete velký hudební festival plný lidí? Dobrá káva může být tím, co k večeru bodne fanouškům i účinkujícím.<br>
+                </p>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="obecniAkcePopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/udalost.png" alt="Emoji zlaté vstupenky" width="40px" />
+                        <h3>Obecní akce</h3>
+                    </div>
+                    Pořádáte tradiční vesnickou slavnost, na kterou se obyvatelé těší každý rok? Ozvláštněte akci něčím netradičním, třeba právě italským piaggiem.<br>
+                </p>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="soutezePopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/medaile.png" alt="Emoji medaile" width="40px" />
+                        <h3>Soutěže</h3>
+                    </div>
+                    Hostujete závody, turnaje nebo zápasy? Rodinní příslušníci závodníků se mnohdy rádi zastaví na jedno odpolední espresso.<br>
+                </p>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="oslavyPopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/oslava.png" alt="Emoji dortu" width="40px" />
+                        <h3>Oslavy</h3>
+                    </div>
+                    Oslavujete narození děťátka, kulatiny, státnice? Profesionální baristické služby mohou být velkou pomocí při vaření 80 káv pro všechny přítomné.<br>
+                </p>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="firemniAkcePopup">
+            <div class="popup">
+                <p>
+                    <div class="popup-header">
+                        <img src="fotky/emoji/firma.png" alt="Emoji obleku" width="40px" />
+                        <h3>Firemní akce</h3>
+                    </div>
+                    Plánujete sraz jako poděkování zaměstnancům či spolupracovníkům? Lahodná vůně kávy je možná to jediné, na co se vaši kolegové každé ráno těší.<br>
+                </p>
+            </div>
+        </div>
+
         <div id="top"></div>
         <header>
             <nav>
@@ -57,7 +129,7 @@
                 alt="Eli a Adél stojící u piaggia prodávající kávu."
             />
             <div class="hero-content">
-                <h1>Coffee Twins</h1>
+                <h1>Twins Coffee</h1>
                 <p>Pojízdná kavárna, která promění Vaši akci v dokonalou!</p>
             </div>
             <p id="hero-text-mobile">
@@ -82,8 +154,8 @@
                 <br />
                 <p>
                     Kávové nápoje podáváme v porcelánových šálcích s logem
-                    Coffee Twins či na venkovních akcích v tepluvzdorných
-                    papírových kelímcích s logem Coffee Twins.
+                    Twins Coffee či na venkovních akcích v tepluvzdorných
+                    papírových kelímcích s logem Twins Coffee.
                 </p>
                 <div class="service-grid">
                     <div class="service-card">
@@ -93,7 +165,7 @@
                             class="emoji"
                         />
                         <h3>Svatby</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="svatbyPopup">Zjistit více...</a>
                     </div>
                     <div class="service-card">
                         <img
@@ -102,7 +174,7 @@
                             class="emoji"
                         />
                         <h3>Festivaly</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="festivalyPopup">Zjistit více...</a>
                     </div>
                     <div class="service-card">
                         <img
@@ -111,7 +183,7 @@
                             class="emoji"
                         />
                         <h3>Obecní akce</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="obecniAkcePopup">Zjistit více...</a>
                     </div>
                     <div class="service-card">
                         <img
@@ -120,7 +192,7 @@
                             class="emoji"
                         />
                         <h3>Soutěže</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="soutezePopup">Zjistit více...</a>
                     </div>
                     <div class="service-card">
                         <img
@@ -129,7 +201,7 @@
                             class="emoji"
                         />
                         <h3>Oslavy</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="oslavyPopup">Zjistit více...</a>
                     </div>
                     <div class="service-card">
                         <img
@@ -138,7 +210,7 @@
                             class="emoji"
                         />
                         <h3>Firemní akce</h3>
-                        <a href="#">Zjistit více...</a>
+                        <a href="#" data-popup="firemniAkcePopup">Zjistit více...</a>
                     </div>
                 </div>
             </div>
@@ -239,6 +311,34 @@
                     <p>Ano, akceptujeme platby kartou i hotovost.</p>
                 </div>
             </div>
+            <div class="faq-item">
+                <button class="faq-question">Jaká kávová zrna používáte?</button>
+                <div class="faq-answer">
+                    <p>
+                        Spolupracujeme s ostravskou domácí pražírnou Laura Coffee. Odebíráme jejich 100% brazilskou Arabicu s aromatem lískového oříšku. Zrna jsou středně pražená, tudíž nejsou ani příliš kyselá, ale ani příliš hořká. 
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Mohu využít vašich služeb, i když se oslava koná uvnitř budovy?</button>
+                <div class="faq-answer">
+                    <p>
+                        Záleží na přístupu do budovy. Pokud přístupu nebrání schody či jiná vyvýšená překážka, která se nedá přejet (př. vyšší než retardér), dostaneme se tam. Kromě toho záleží také na šířce dveří, v nejhorších případech jsme dveře vysazovali z pantů. Všechno jde, když se chce!
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Používáte také alternativní mléka?</button>
+                <div class="faq-answer">
+                    <p>Ano. Nejčastěji ovesná, mandlová či sójová.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">A vy jste vážně dvojčata?</button>
+                <div class="faq-answer">
+                    <p>Ano, jsme. Ale jestli jednovaječná, nebo dvouvaječná Vám prozradíme až osobně.</p>
+                </div>
+            </div>
         </section>
 
         <section class="contact" id="contact">
@@ -308,6 +408,27 @@
                     const answer = button.nextElementSibling;
                     answer.style.display =
                         answer.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const popupLinks = document.querySelectorAll('.service-card a[data-popup]');
+                
+                popupLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const popupId = this.getAttribute('data-popup');
+                        const popupOverlay = document.getElementById(popupId);
+                        popupOverlay.style.display = 'flex';
+                    });
+                });
+
+                document.querySelectorAll('.popup-overlay').forEach(overlay => {
+                    overlay.addEventListener('click', function(e) {
+                        if (e.target === this) {
+                            this.style.display = 'none';
+                        }
+                    });
                 });
             });
         </script>

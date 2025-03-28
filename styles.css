@@ -475,6 +475,52 @@ footer a {
     transition: all 0.3s;
 }
 
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Above everything else */
+}
+
+.popup {
+    position: relative;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    width: min(400px, 90%);
+    max-width: 90%; /* Responsive on small screens */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 1rem;
+}
+
+.popup h3 {
+    color: var(--accent-color);
+    font-weight: 600;
+    width: fit-content;
+
+    align-self: center;
+
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
