@@ -225,6 +225,41 @@ nav #objednat-button:hover::after {
     font-size: 1.3rem;
 }
 
+.feedback {
+    padding: 5rem 1rem;
+    background-color: var(--primary-color);
+}
+
+.feedback-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.feedback h2 {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 800;
+}
+
+.feedback p {
+    font-size: 1.3rem;
+}
+
+.feedback .images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feedback .images img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
 .about {
     padding: 5rem 1rem;
     background-color: white;
@@ -740,6 +775,19 @@ footer a {
         font-size: 1rem;
     }
 
+    .feedback .images {
+        /* two images next to each other */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Feedback Section */
+    .feedback h2 {
+        font-size: 2rem;
+    }
+    .feedback p {
+        font-size: 1rem;
+    }
+
     /* About Section */
     .about h2 {
         font-size: 2rem;
@@ -779,5 +827,12 @@ footer a {
 
     .contact p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 370px) {
+    /* feedback 1 column */
+    .feedback .images {
+        grid-template-columns: 1fr;
     }
 }
